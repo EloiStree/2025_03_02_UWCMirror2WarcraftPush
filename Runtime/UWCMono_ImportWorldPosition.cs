@@ -10,8 +10,21 @@ public class UWCMono_ImportWorldPosition : MonoBehaviour
     public RightBorderPercentFetch m_squarePositionX = new RightBorderPercentFetch(0.40f);
     public RightBorderPercentFetch m_squarePositionY = new RightBorderPercentFetch(0.60f);
 
-    public float worldPositionX = 0;
-    public float worldPositionY = 0;
+
+    [Header("Position")]
+    public float m_worldPositionX = 0;
+    public float m_worldPositionY = 0;
+
+    [Header("X")]
+    public int m_rx;
+    public int m_gx;
+    public int m_bx;
+
+    [Header("Y")]
+    public int m_ry;
+    public int m_gy;
+    public int m_by;
+
     public void PushIn(Texture2D texture)
     {
         m_squarePositionX.PushIn(texture);
@@ -19,7 +32,16 @@ public class UWCMono_ImportWorldPosition : MonoBehaviour
         Color x = m_squarePositionX.m_colorFetched;
         Color y = m_squarePositionY.m_colorFetched;
 
-        worldPositionY = y.b + y.r * 100 + y.r * 10000;
-        worldPositionX = x.b + x.r * 100 + x.r * 10000;
+        m_rx = (int)(x.r * 100f);
+        m_ry = (int)(y.r * 100f);
+
+        m_gx = ((int)(x.g * 100f)) * 100;
+        m_gy = ((int)(y.g * 100f)) * 100;
+        
+        m_bx = ((int)(x.b * 100f)) * 10000;
+        m_by = ((int)(y.b * 100f)) * 10000;
+
+        m_worldPositionX = m_rx + m_gx + m_bx;
+        m_worldPositionY = m_ry + m_gy + m_by;
     }
 }

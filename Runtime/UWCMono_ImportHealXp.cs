@@ -14,7 +14,7 @@ public class UWCMono_ImportHealXp : MonoBehaviour
 
         m_squarePosition.PushIn(texture);
         Color c = m_squarePosition.m_colorFetched;
-        m_rPlayerLevel = (int)(c.r * 255);
+        m_rPlayerLevel = (int)(c.r * 100f);
         m_gPercentLife = c.g;
         m_bPercentXp = c.b;
 
