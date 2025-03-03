@@ -1,0 +1,23 @@
+
+{                                                                                
+  "name": "be.elab.uwcwow",                              
+  "displayName": "uWC Mirror 2 Warcraft",                        
+  "version": "0.0.1",                         
+  "unity": "2018.1",                             
+  "unityRelease": "",                             
+  "description": "Tool to import Wow meta information from color picking wiht uWC",                         
+  "keywords": ["Script","Tool"],                       
+  "dependencies":{},     
+  "relatedPackages":{},     
+  "samples" : [],     
+  "author" : {
+"name":"",
+"mail":"",
+"url":""},     
+  "repository":{
+"type":"Git",
+"url":"https://github.com/EloiStree/2025_03_02_UWCMirror2Warcraft.git",
+"footprint":"",
+"revision":""},     
+  "category": "Script"                   
+} 

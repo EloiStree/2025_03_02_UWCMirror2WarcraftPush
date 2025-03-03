@@ -13,10 +13,10 @@ public class UWCMono_ImportHealXp : MonoBehaviour
     public void PushIn(Texture2D texture) {
 
         m_squarePosition.PushIn(texture);
-        Color c = m_squarePosition.m_colorFetched;
-        m_rPlayerLevel = (int)(c.r * 100f);
-        m_gPercentLife = c.g;
-        m_bPercentXp = c.b;
+        Color32 c = m_squarePosition.m_colorFetched;
+        m_rPlayerLevel = c.r;
+        m_gPercentLife = c.g/255f;
+        m_bPercentXp = c.b / 255f;
 
     }
 }

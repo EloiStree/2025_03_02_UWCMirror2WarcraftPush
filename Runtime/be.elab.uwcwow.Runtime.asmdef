@@ -1,0 +1,16 @@
+{
+    "name": "be.elab.uwcwow",
+    "rootNamespace": "",
+    "references": [
+        "uWindowCapture.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

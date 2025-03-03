@@ -12,7 +12,7 @@ public class UWCMono_ImportTextFromColorSolo : MonoBehaviour
 {
     public int m_lineAdjustement = 31;
     public int m_columnAdjustement = 1;
-    public int m_lineMaxLenght = 4;
+    public int m_lineMaxLenght = 5;
     public int m_columnMaxLenght = 600;
     public Texture2D m_linkedTextureCopy;
     public Color[] m_pixels;
