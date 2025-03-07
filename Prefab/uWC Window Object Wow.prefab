@@ -195,6 +195,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb1f819d400db04686538925f0117e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_lifePercent: 0
+  m_xpPercent: 0
+  m_playerLevel: 0
+  m_mapX: 0
+  m_mapY: 0
+  m_playerRotation: 0
+  m_worldX: 0
+  m_worldY: 0
   m_mapPosition: {fileID: 9175560120456781257}
   m_worldPosition: {fileID: 4380071915101482087}
   m_healXp: {fileID: 7029952688254345977}
@@ -252,6 +260,51 @@ MonoBehaviour:
   m_text: 
   m_isInitialized: 0
   m_catchException: 1
+--- !u!1 &802638173378119928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9221230624907850037}
+  - component: {fileID: 4792280269323228498}
+  m_Layer: 0
+  m_Name: CaptureEcran
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9221230624907850037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802638173378119928}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8646564516056188081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4792280269323228498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802638173378119928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c45d6c4f497ed4f98af5ab262a1792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_currentTexture: {fileID: 0}
 --- !u!1 &2600911290210822737
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +357,59 @@ MonoBehaviour:
   m_rMapX: 0
   m_gMapY: 0
   m_bRotationAngle: 0
+--- !u!1 &2788263041564327382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6745458164318416380}
+  - component: {fileID: 3470672689002784116}
+  m_Layer: 0
+  m_Name: Student Exercice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6745458164318416380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2788263041564327382}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8646564516056188081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3470672689002784116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2788263041564327382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d06ac99dbb9eb142a05357f65cbb5c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_currentTexture: {fileID: 0}
+  m_angleCounterClockwise: 0
+  m_mapPositionX: 0
+  m_mapPositionY: 0
+  m_worldPositionX: 0
+  m_worldPositionY: 0
+  m_life: 0
+  m_experience: 0
+  m_level: 0
 --- !u!1 &5339999174096739600
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +559,8 @@ Transform:
   - {fileID: 2227215827514692031}
   - {fileID: 2090824121274332262}
   - {fileID: 8934269467502097040}
+  - {fileID: 9221230624907850037}
+  - {fileID: 6745458164318416380}
   m_Father: {fileID: 4000011764941622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6419739185958648302
@@ -511,6 +619,30 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7029952688254345977}
         m_TargetAssemblyTypeName: UWCMono_ImportHealXp, Assembly-CSharp
+        m_MethodName: PushIn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4792280269323228498}
+        m_TargetAssemblyTypeName: UWCMono_ScreenshotInDataPath, Assembly-CSharp
+        m_MethodName: PushIn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3470672689002784116}
+        m_TargetAssemblyTypeName: UWCMono_ExerciceFetchPositionColors, Assembly-CSharp
         m_MethodName: PushIn
         m_Mode: 0
         m_Arguments:
