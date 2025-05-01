@@ -34,7 +34,7 @@ public class SleepyExctractMono : MonoBehaviour
         {
             if (uwcTexture.window != null)
             {
-                if (uwcTexture.window.title.Trim().IndexOf(m_windowName)>-1)
+                if (uwcTexture.window.title.Trim().Equals(m_windowName))
                 {
                     uwcTexturesInScene.Add(new UwcWindowPixelsAccess(uwcTexture));
                 }
