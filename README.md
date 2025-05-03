@@ -4,7 +4,13 @@
 This Unity Code allows to export from Warcraft LUA Text and world map coordinate.
 
 You need this amazing tool to for this package :  
-- ["com.hecomi.uwindowcapture": "https://github.com/hecomi/uWindowCapture.git#upm",](https://github.com/hecomi/uWindowCapture)
+```
+  "be.elab.trustedwss": "https://github.com/EloiStree/2025_05_01_TrustedWebsocket.git",
+  "be.elab.udpthreadsender": "https://github.com/EloiStree/2020_11_29_UDPThreadSender.git",
+  "be.elab.uwcwow": "https://github.com/EloiStree/2025_03_02_UWCMirror2Warcraft.git",
+  "com.hecomi.uwindowcapture": "https://github.com/hecomi/uWindowCapture.git#upm",
+
+```
 
 [![image](https://github.com/user-attachments/assets/e3af565a-28b7-4256-b094-b52b8d244a6e)
 ![image](https://github.com/user-attachments/assets/bf7f7e04-5b89-452b-a7c9-d2bf87d4ed86)](https://github.com/hecomi/uWindowCapture)
