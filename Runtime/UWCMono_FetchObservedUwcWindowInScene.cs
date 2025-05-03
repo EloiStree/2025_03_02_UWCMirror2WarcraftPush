@@ -3,29 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using uWindowCapture;
 
-public class SleepyExctractMono : MonoBehaviour
+public class UWCMono_FetchObservedUwcWindowInScene : MonoBehaviour
 {
 
     public string m_windowName = "World of Warcraft";
     [SerializeField] List<UwcWindowPixelsAccess> uwcTexturesInScene;
 
-
-   
-        void Awake()
+    void Awake()
     {
-        
-        Invoke(nameof(Refresh), 3f);
+        Invoke(nameof(Refresh), m_delayInSecondsToStart);
     }
 
     [ContextMenu("Refresh")]
     public void Refresh()
     {
-
-
         FindAllUWcInSceneAndDestroy();
     }
 
-    public bool m_disableUwcTextures = false;
+    public float m_delayInSecondsToStart =2f;
+    public bool m_disableUwcTextureObservers = false;
     private void FindAllUWcInSceneAndDestroy()
     {
         uwcTexturesInScene = new List<UwcWindowPixelsAccess>();
@@ -42,7 +38,7 @@ public class SleepyExctractMono : MonoBehaviour
                 else
                 {
                     // disable game object
-                    if (m_disableUwcTextures)
+                    if (m_disableUwcTextureObservers)
                      uwcTexture.gameObject.SetActive(false);
                 }
             }

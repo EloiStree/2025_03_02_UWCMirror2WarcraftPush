@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114000013686570872}
   - component: {fileID: 114203295424323036}
   m_Layer: 0
-  m_Name: uWC Window Object Wow Sleepy
+  m_Name: uWC Wow Monitor Read Pixel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

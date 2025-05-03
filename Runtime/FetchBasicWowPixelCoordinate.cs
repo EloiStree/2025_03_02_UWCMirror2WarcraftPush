@@ -8,7 +8,7 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
 {
 
 
-    public SleepyExctractMono m_pixelAccess;
+    public UWCMono_FetchObservedUwcWindowInScene m_pixelAccess;
 
     public float m_cell0 =15f / 16;
     public float m_cell1 =13f / 16;
