@@ -141,15 +141,36 @@ public class UwcWindowPixelsAccess
         y = Mathf.Clamp(y, 0, window.height - 1);
         GetPixel(x, y, out found, out foundColor);
     }
-    public void GetPixelAtPercentDownRightTopLeft(int pixel, float percentY, out bool found, out Color32 foundColor, int windowTopPixeld=31)
+    public void GetPixelAtPercentDownRightTopLeft(int pixel, float percentY, out bool found, out Color32 foundColor, int windowTopPixeld = 31)
     {
+        if (m_window == null) { found = false; foundColor = Color.red; return; }
+        if (m_window.window == null) { found = false; foundColor = Color.red; return; }
+        if (m_window.window.width == 0) { found = false; foundColor = Color.red; return; }
+        if (m_window.window.height == 0) { found = false; foundColor = Color.red; return; }
 
-        int heightLessHead = m_window.window.height - windowTopPixeld;  
+        int heightLessHead = m_window.window.height - windowTopPixeld;
 
 
         var window = m_window.window;
         if (window == null || window.width == 0) { found = false; foundColor = Color.red; return; }
         int x = (int)(window.width - pixel);
+        int y = (int)(heightLessHead * (1f - percentY));
+        y += windowTopPixeld;
+
+        x = Mathf.Clamp(x, 0, window.width - 1);
+        y = Mathf.Clamp(y, 0, window.height - 1);
+        GetPixel(x, y, out found, out foundColor);
+    }
+
+    public void GetPixelAtPercentDownLeftTopRight(int pixel, float percentY, out bool found, out Color32 foundColor, int windowTopPixeld = 31)
+    {
+
+        int heightLessHead = m_window.window.height - windowTopPixeld;
+
+
+        var window = m_window.window;
+        if (window == null || window.width == 0) { found = false; foundColor = Color.red; return; }
+        int x = (int)( pixel);
         int y = (int)(heightLessHead * (1f - percentY));
         y += windowTopPixeld;
 
