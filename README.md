@@ -12,9 +12,14 @@ You need this amazing tool to for this package :
 
 ```
 
+Unity Project to relay:
+```
+git clone https://github.com/EloiStree/2025_05_03_WowRemoteUwcRelay.git
+```
+
 Wow addons
 ```
-git clone https://github.com/EloiStree/2024_01_18_EloiLabWowAddon EloiLab
+git clone https://github.com/EloiStree/2024_01_18_EloiLabWowAddon EloiLab.git
 ```
 
 [![image](https://github.com/user-attachments/assets/e3af565a-28b7-4256-b094-b52b8d244a6e)
