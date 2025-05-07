@@ -100,6 +100,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 664230623499961381}
     m_Modifications:
+    - target: {fileID: 1177357922533216731, guid: 4ad73ecc97887ff4ebf9ff668225143d,
+        type: 3}
+      propertyPath: m_targetRegistered.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177357922533216731, guid: 4ad73ecc97887ff4ebf9ff668225143d,
+        type: 3}
+      propertyPath: m_targetRegistered.Array.data[0].m_ip
+      value: 127.0.0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177357922533216731, guid: 4ad73ecc97887ff4ebf9ff668225143d,
+        type: 3}
+      propertyPath: m_targetRegistered.Array.data[0].m_port
+      value: 6999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177357922533216731, guid: 4ad73ecc97887ff4ebf9ff668225143d,
+        type: 3}
+      propertyPath: m_singleAlias.Array.data[0].m_ref.m_port
+      value: 6999
+      objectReference: {fileID: 0}
     - target: {fileID: 5546503053411044964, guid: 4ad73ecc97887ff4ebf9ff668225143d,
         type: 3}
       propertyPath: m_pixelAccess
@@ -173,7 +193,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3807607682357743092, guid: 4ad73ecc97887ff4ebf9ff668225143d, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 9031071795898632684, guid: 4ad73ecc97887ff4ebf9ff668225143d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2881915622033002143}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4273490686071446159, guid: 4ad73ecc97887ff4ebf9ff668225143d,
         type: 3}
@@ -183,10 +207,18 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5560958598157735164}
+    - targetCorrespondingSourceObject: {fileID: 5986347318776033091, guid: 4ad73ecc97887ff4ebf9ff668225143d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8151737648959188159}
     - targetCorrespondingSourceObject: {fileID: 9084302739541861971, guid: 4ad73ecc97887ff4ebf9ff668225143d,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1651885768949999008}
+    - targetCorrespondingSourceObject: {fileID: 9084302739541861971, guid: 4ad73ecc97887ff4ebf9ff668225143d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9082255096577706418}
   m_SourcePrefab: {fileID: 100100000, guid: 4ad73ecc97887ff4ebf9ff668225143d, type: 3}
 --- !u!1 &2096100785229519315 stripped
 GameObject:
@@ -209,7 +241,7 @@ MonoBehaviour:
   m_windowName: World of Warcraft
   uwcTexturesInScene: []
   m_delayInSecondsToStart: 2
-  m_disableUwcTextureObservers: 0
+  m_disableUwcTextureObservers: 1
 --- !u!1 &6361695766674629903 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9084302739541861971, guid: 4ad73ecc97887ff4ebf9ff668225143d,
@@ -217,6 +249,20 @@ GameObject:
   m_PrefabInstance: {fileID: 2763140537786516316}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1651885768949999008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6361695766674629903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1ebc61c0924ff489bd1b8f2aafe6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_note:
+    m_textNote: github.com/EloiStree/2025_05_01_TrustedWebsocket.git
+--- !u!114 &9082255096577706418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,3 +302,91 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_note:
     m_textNote: github.com/EloiStree/2020_11_29_UDPThreadSender.git
+--- !u!114 &8151737648959188159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451957456426150943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1ebc61c0924ff489bd1b8f2aafe6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_note:
+    m_textNote: github.com/EloiStree/2020_11_29_UDPThreadSender.git
+--- !u!1001 &4425653252466199803
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6560735713236159152}
+    m_Modifications:
+    - target: {fileID: 1915589852802433636, guid: b3a19cec12458f341935ff1c52ed6721,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915589852802433636, guid: b3a19cec12458f341935ff1c52ed6721,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915589852802433636, guid: b3a19cec12458f341935ff1c52ed6721,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915589852802433636, guid: b3a19cec12458f341935ff1c52ed6721,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915589852802433636, guid: b3a19cec12458f341935ff1c52ed6721,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915589852802433636, guid: b3a19cec12458f341935ff1c52ed6721,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915589852802433636, guid: b3a19cec12458f341935ff1c52ed6721,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915589852802433636, guid: b3a19cec12458f341935ff1c52ed6721,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915589852802433636, guid: b3a19cec12458f341935ff1c52ed6721,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915589852802433636, guid: b3a19cec12458f341935ff1c52ed6721,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455423112267517505, guid: b3a19cec12458f341935ff1c52ed6721,
+        type: 3}
+      propertyPath: m_Name
+      value: UDP Broadcaster
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3a19cec12458f341935ff1c52ed6721, type: 3}
+--- !u!4 &2881915622033002143 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1915589852802433636, guid: b3a19cec12458f341935ff1c52ed6721,
+    type: 3}
+  m_PrefabInstance: {fileID: 4425653252466199803}
+  m_PrefabAsset: {fileID: 0}
