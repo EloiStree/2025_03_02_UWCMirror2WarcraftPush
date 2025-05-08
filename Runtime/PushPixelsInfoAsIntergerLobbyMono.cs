@@ -211,6 +211,7 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
             Push(m_playerSendAsInteger[i].m_i17TargetPowerPercent, localDate);
             Push(m_playerSendAsInteger[i].m_i18TargetWindowHandle6Digit, localDate);
             Push(m_playerSendAsInteger[i].m_i19TargetWindowHandle6DigitAdditional, localDate);
+            Push(m_playerSendAsInteger[i].m_i21TargetXpModulo999999, localDate);
 
 
         }
