@@ -39,6 +39,7 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
         public int m_i17TargetPowerPercent;
         public int m_i18TargetWindowHandle6Digit;
         public int m_i19TargetWindowHandle6DigitAdditional;
+        public int m_i21TargetXpModulo999999;
     }
 
     void Start()
@@ -85,6 +86,9 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
             m_playerSendAsInteger[i].m_i17TargetPowerPercent = playerIndex + 17000000;
             m_playerSendAsInteger[i].m_i18TargetWindowHandle6Digit = playerIndex + 18000000;
             m_playerSendAsInteger[i].m_i19TargetWindowHandle6DigitAdditional = playerIndex + 19000000;
+            m_playerSendAsInteger[i].m_i21TargetXpModulo999999 = playerIndex + 21000000;
+
+
 
 
             int handle = target.m_windowHandle;
@@ -98,6 +102,8 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
                 m_playerSendAsInteger[i].m_i18TargetWindowHandle6Digit += handle;
                 m_playerSendAsInteger[i].m_i19TargetWindowHandle6DigitAdditional += 0;
             }
+
+            m_playerSendAsInteger[i].m_i21TargetXpModulo999999 += target.m_fullXpModulo999999;
 
 
             m_playerSendAsInteger[i].m_i01MapX += (int)(target.m_rMapX * 100f);

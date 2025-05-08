@@ -61,7 +61,7 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
                 uwcWindowPixelsAccess.GetPixelAtPercentDownRightTopLeft(m_rightMarginPixel, m_cell4, out found, out Color32 playerPartOne);
                 if (found) m_fourPixelsBasicWowInfo[i].m_rightTop4_partyLife = playerPartOne;
                 uwcWindowPixelsAccess.GetPixelAtPercentDownRightTopLeft(m_rightMarginPixel, m_cell5, out found, out Color32 playerPartTwo);
-                if (found) m_fourPixelsBasicWowInfo[i].m_rightTop5_integerOut = playerPartTwo;
+                if (found) m_fourPixelsBasicWowInfo[i].m_rightTop5_fullXpModulo = playerPartTwo;
                 uwcWindowPixelsAccess.GetPixelAtPercentDownRightTopLeft(m_rightMarginPixel, m_cell6, out found, out Color32 playerGroupLife);
                 if (found) m_fourPixelsBasicWowInfo[i].m_rightTop6_playerIdPart1 = playerGroupLife;
                 uwcWindowPixelsAccess.GetPixelAtPercentDownRightTopLeft(m_rightMarginPixel, m_cell7, out found, out Color32 integerOutput);
@@ -104,7 +104,7 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
         public Color32 m_rightTop2_worldPositionY;
         public Color32 m_rightTop3_lifeXp;
         public Color32 m_rightTop4_partyLife;
-        public Color32 m_rightTop5_integerOut;
+        public Color32 m_rightTop5_fullXpModulo;
         public Color32 m_rightTop6_playerIdPart1;
         public Color32 m_rightTop7_playerIdPart2;
 
@@ -136,7 +136,7 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
         public float m_partyPlayerLife3;
         public float m_partyPlayerLife4;
         public float m_petLife;
-
+        public int m_fullXpModulo999999 = 0;
         public float m_targetLifePercent;
         public float m_targetLevel;
         public float m_targetPowerPercent;
@@ -157,6 +157,11 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
             m_gPercentLife = m_rightTop3_lifeXp.r / 255f;
             m_rPlayerLevel = m_rightTop3_lifeXp.g;
             m_bPercentXp = m_rightTop3_lifeXp.b / 255f;
+
+
+            m_fullXpModulo999999 = m_rightTop5_fullXpModulo.r * 10000 +
+                                   m_rightTop5_fullXpModulo.g * 100 +
+                                   m_rightTop5_fullXpModulo.b *1;
 
 
             int rx;
