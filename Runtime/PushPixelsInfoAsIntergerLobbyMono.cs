@@ -37,6 +37,8 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
         public int m_i15TargetIdPartThree;
         public int m_i16TargetLifePercent;
         public int m_i17TargetPowerPercent;
+        public int m_i18TargetWindowHandle6Digit;
+        public int m_i19TargetWindowHandle6DigitAdditional;
     }
 
     void Start()
@@ -79,8 +81,23 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
             m_playerSendAsInteger[i].m_i07PlayerLifePercent = playerIndex   + 7000000;
             m_playerSendAsInteger[i].m_i08PlayerXpPercent = playerIndex + 8000000;
             m_playerSendAsInteger[i].m_i09PartyLife = playerIndex + 9000000;
-            m_playerSendAsInteger[i].m_i16TargetLifePercent = playerIndex + 16000000;
+            m_playerSendAsInteger[i].m_i16TargetLifePercent = playerIndex  + 16000000;
             m_playerSendAsInteger[i].m_i17TargetPowerPercent = playerIndex + 17000000;
+            m_playerSendAsInteger[i].m_i18TargetWindowHandle6Digit = playerIndex + 18000000;
+            m_playerSendAsInteger[i].m_i19TargetWindowHandle6DigitAdditional = playerIndex + 19000000;
+
+
+            int handle = target.m_windowHandle;
+            if (handle >= 1000000)
+            {
+                m_playerSendAsInteger[i].m_i18TargetWindowHandle6Digit += handle%1000000;
+                m_playerSendAsInteger[i].m_i19TargetWindowHandle6DigitAdditional += handle/1000000;
+            }
+            else
+            {
+                m_playerSendAsInteger[i].m_i18TargetWindowHandle6Digit += handle;
+                m_playerSendAsInteger[i].m_i19TargetWindowHandle6DigitAdditional += 0;
+            }
 
 
             m_playerSendAsInteger[i].m_i01MapX += (int)(target.m_rMapX * 100f);
@@ -186,9 +203,16 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
             Push(m_playerSendAsInteger[i].m_i15TargetIdPartThree, localDate);
             Push(m_playerSendAsInteger[i].m_i16TargetLifePercent, localDate);
             Push(m_playerSendAsInteger[i].m_i17TargetPowerPercent, localDate);
+            Push(m_playerSendAsInteger[i].m_i18TargetWindowHandle6Digit, localDate);
+            Push(m_playerSendAsInteger[i].m_i19TargetWindowHandle6DigitAdditional, localDate);
 
 
         }
+    }
+
+    private void Push(object m_i19TargetWindowHandleAdditional, DateTime localDate)
+    {
+        throw new NotImplementedException();
     }
 
     private byte CharToDigit0To9(char charToParse)

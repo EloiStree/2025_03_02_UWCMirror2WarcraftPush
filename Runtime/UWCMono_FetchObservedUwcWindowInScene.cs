@@ -74,6 +74,7 @@ public class UwcWindowPixelsAccess
     public Color32[] m_colors;
     public int m_width;
     public int m_height;
+    public int m_hWnd32;
     public UwcWindowPixelsAccess(UwcWindowTexture uwcTexture)
     {
         m_window = uwcTexture;
@@ -84,6 +85,12 @@ public class UwcWindowPixelsAccess
         m_colors[0] = Color.red;
         m_width = uwcTexture.window.width;
         m_height = uwcTexture.window.height;
+        m_hWnd32 = uwcTexture.window.handle.ToInt32();
+    }
+
+    public void GetHWnd32(out int hWnd32)
+    {
+        hWnd32 = m_hWnd32;
     }
 
     public void GetPixels(int x, int y, int width, int height, out bool found, ref Color32[] foundColor)
@@ -208,6 +215,8 @@ public class UwcWindowPixelsAccess
         width = window.width;
         height = window.height;
     }
+
+    
 
     public void GetPixel(int x, int y, out bool found, out Color32 foundColor)
     {

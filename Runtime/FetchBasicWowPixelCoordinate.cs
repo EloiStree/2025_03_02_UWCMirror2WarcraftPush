@@ -47,6 +47,9 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
 
             if (found && uwcWindowPixelsAccess!=null && uwcWindowPixelsAccess.m_window != null)
             {
+                uwcWindowPixelsAccess.GetHWnd32(out int hwnd);
+                m_fourPixelsBasicWowInfo[i].m_windowHandle = hwnd;
+
                 uwcWindowPixelsAccess.GetPixelAtPercentDownRightTopLeft(m_rightMarginPixel, m_cell0, out found, out Color32 topRight);
                 if (found) m_fourPixelsBasicWowInfo[i].m_rightTop0_mapXYAngle = topRight;
                 uwcWindowPixelsAccess.GetPixelAtPercentDownRightTopLeft(m_rightMarginPixel, m_cell1, out found, out Color32 topRightMiddle);
@@ -138,6 +141,7 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
         public float m_targetLevel;
         public float m_targetPowerPercent;
         public float m_targetIsCastingOrChanneling;
+        public int m_windowHandle;
 
         public int m_last24bitUnsignedInteger = 0;
         public UnityEvent<int> m_onLast24bitUnsignedInteger = new UnityEvent<int>();
