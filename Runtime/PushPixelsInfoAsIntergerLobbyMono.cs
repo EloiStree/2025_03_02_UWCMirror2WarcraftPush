@@ -8,6 +8,7 @@ using static FetchBasicWowPixelCoordinate;
 public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
 {
 
+    public int m_playerIndexStart = 10;
     public FetchBasicWowPixelCoordinate m_pixelAccess;
     public UnityEvent<int> m_onPushIntegerToLobby;
     public UnityEvent<int,DateTime> m_onPushIntegerToLobbyWithLocalDateUTC;
@@ -39,7 +40,8 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
         public int m_i17TargetPowerPercent;
         public int m_i18TargetWindowHandle6Digit;
         public int m_i19TargetWindowHandle6DigitAdditional;
-        public int m_i21TargetXpModulo999999;
+        public int m_i21PlayerXpModulo999999;
+        public int m_i22TargetLevel;
     }
 
     void Start()
@@ -71,7 +73,7 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
             LeftRightCellPixelInfo target = fourPixelsBasicWowInfo[i];
             if (i > 18)
                 throw new System.Exception("Too many players, only 19 players supported in integer format");
-            int playerIndex = (i+1) * 100000000;
+            int playerIndex = (i+1+ m_playerIndexStart) * 100000000;
             m_playerSendAsInteger[i].m_playerTag = playerIndex;
             m_playerSendAsInteger[i].m_i01MapX = playerIndex                + 1000000;
             m_playerSendAsInteger[i].m_i02MapY = playerIndex                + 2000000;
@@ -86,7 +88,8 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
             m_playerSendAsInteger[i].m_i17TargetPowerPercent = playerIndex + 17000000;
             m_playerSendAsInteger[i].m_i18TargetWindowHandle6Digit = playerIndex + 18000000;
             m_playerSendAsInteger[i].m_i19TargetWindowHandle6DigitAdditional = playerIndex + 19000000;
-            m_playerSendAsInteger[i].m_i21TargetXpModulo999999 = playerIndex + 21000000;
+            m_playerSendAsInteger[i].m_i21PlayerXpModulo999999 = playerIndex + 21000000;
+            m_playerSendAsInteger[i].m_i22TargetLevel = playerIndex + 22000000;
 
 
 
@@ -103,7 +106,7 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
                 m_playerSendAsInteger[i].m_i19TargetWindowHandle6DigitAdditional += 0;
             }
 
-            m_playerSendAsInteger[i].m_i21TargetXpModulo999999 += target.m_fullXpModulo999999;
+            m_playerSendAsInteger[i].m_i21PlayerXpModulo999999 += target.m_fullXpModulo999999;
 
 
             m_playerSendAsInteger[i].m_i01MapX += (int)(target.m_rMapX * 100f);
@@ -117,6 +120,7 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
 
             m_playerSendAsInteger[i].m_i16TargetLifePercent += (int)(target.m_targetLifePercent * 10000f);
             m_playerSendAsInteger[i].m_i17TargetPowerPercent += (int)(target.m_targetPowerPercent * 10000f);
+            m_playerSendAsInteger[i].m_i22TargetLevel += (int)(target.m_targetLevel);
 
 
             int targetBlue = target.m_leftTop5_targetLifeLevelPowerInfo.b;
@@ -211,8 +215,8 @@ public class PushPixelsInfoAsIntergerLobbyMono : MonoBehaviour
             Push(m_playerSendAsInteger[i].m_i17TargetPowerPercent, localDate);
             Push(m_playerSendAsInteger[i].m_i18TargetWindowHandle6Digit, localDate);
             Push(m_playerSendAsInteger[i].m_i19TargetWindowHandle6DigitAdditional, localDate);
-            Push(m_playerSendAsInteger[i].m_i21TargetXpModulo999999, localDate);
-
+            Push(m_playerSendAsInteger[i].m_i21PlayerXpModulo999999, localDate);
+            Push(m_playerSendAsInteger[i].m_i22TargetLevel, localDate);
 
         }
     }
