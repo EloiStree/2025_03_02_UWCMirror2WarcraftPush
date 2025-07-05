@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using JetBrains.Annotations;
+using NUnit.Framework.Internal;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -69,15 +71,15 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
 
 
                 uwcWindowPixelsAccess.GetPixelAtPercentDownLeftTopRight(m_leftMarginPixel, m_cell0, out found, out Color32 leftTop0);
-                if (found) m_fourPixelsBasicWowInfo[i].m_leftTop0 = leftTop0;
+                if (found) m_fourPixelsBasicWowInfo[i].m_leftTop0_custom24Bits = leftTop0;
                 uwcWindowPixelsAccess.GetPixelAtPercentDownLeftTopRight(m_leftMarginPixel, m_cell1, out found, out Color32 leftTop1);
-                if (found) m_fourPixelsBasicWowInfo[i].m_leftTop1 = leftTop1;
+                if (found) m_fourPixelsBasicWowInfo[i].m_leftTop1_custom24Bits = leftTop1;
                 uwcWindowPixelsAccess.GetPixelAtPercentDownLeftTopRight(m_leftMarginPixel, m_cell2, out found, out Color32 leftTop2);
-                if (found) m_fourPixelsBasicWowInfo[i].m_leftTop2 = leftTop2;
+                if (found) m_fourPixelsBasicWowInfo[i].m_leftTop2_targetState24Bits = leftTop2;
                 uwcWindowPixelsAccess.GetPixelAtPercentDownLeftTopRight(m_leftMarginPixel, m_cell3, out found, out Color32 leftTop3);
-                if (found) m_fourPixelsBasicWowInfo[i].m_leftTop3 = leftTop3;
+                if (found) m_fourPixelsBasicWowInfo[i].m_leftTop3_playerState24Bits = leftTop3;
                 uwcWindowPixelsAccess.GetPixelAtPercentDownLeftTopRight(m_leftMarginPixel, m_cell4, out found, out Color32 leftTop4);
-                if (found) m_fourPixelsBasicWowInfo[i].m_leftTop4 = leftTop4;
+                if (found) m_fourPixelsBasicWowInfo[i].m_leftTop4_gatherObjectId = leftTop4;
                 uwcWindowPixelsAccess.GetPixelAtPercentDownLeftTopRight(m_leftMarginPixel, m_cell5, out found, out Color32 leftTop5);
                 if (found) m_fourPixelsBasicWowInfo[i].m_leftTop5_targetLifeLevelPowerInfo = leftTop5;
                 uwcWindowPixelsAccess.GetPixelAtPercentDownLeftTopRight(m_leftMarginPixel, m_cell6, out found, out Color32 leftTop6);
@@ -108,15 +110,21 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
         public Color32 m_rightTop6_playerIdPart1;
         public Color32 m_rightTop7_playerIdPart2;
 
-        public Color32 m_leftTop0;
-        public Color32 m_leftTop1;
-        public Color32 m_leftTop2;
-        public Color32 m_leftTop3;
-        public Color32 m_leftTop4;
+        public Color32 m_leftTop0_custom24Bits;
+        public Color32 m_leftTop1_custom24Bits;
+        public Color32 m_leftTop2_targetState24Bits;
+        public Color32 m_leftTop3_playerState24Bits;
+        public Color32 m_leftTop4_gatherObjectId;
         public Color32 m_leftTop5_targetLifeLevelPowerInfo;
         public Color32 m_leftTop6_targetPart1;
         public Color32 m_leftTop7_targetPart2;
 
+
+
+        public bool [] m_leftTop0_custom24BitsArray         = new bool[24];
+        public bool [] m_leftTop1_custom24BitsArray         = new bool[24];
+        public bool [] m_leftTop2_targetState24BitsArray    = new bool[24];
+        public bool [] m_leftTop3_playerState24BitsArray    = new bool[24];
 
         public Material m_material;
 
@@ -143,6 +151,52 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
         public float m_targetIsCastingOrChanneling;
         public int m_windowHandle;
 
+        public TargetBinaryInfo m_targetBinaryInfo = new TargetBinaryInfo();
+        public PlayerBinaryInfo m_playerBinaryInfo = new PlayerBinaryInfo();
+
+        [System.Serializable]
+        public class TargetBinaryInfo
+        {
+            public bool m_hasTarget;
+            public bool m_isTargetPlayer;
+            public bool m_isTargetEnemy;
+            public bool m_isTargetInCombat;
+            public bool m_isTargetCasting;
+            public bool m_isTargetDeath;
+            public bool m_isTargetFullLife;
+            public bool m_isTargetWithin10Yards;
+            public bool m_isTargetWithin30Yards;
+            public bool m_isGlobalCooldownActive;
+            public bool m_isTargetHasCorruption;
+            public bool m_isTargetHasAgony;
+            public bool m_isTargetFocusingPlayer;
+        }
+
+        [System.Serializable]
+        public class PlayerBinaryInfo
+        {
+            public bool isCasting;
+            public bool isGatheringHerbs;
+            public bool isGatheringMining;
+            public bool isFishing;
+            public bool isOnGround;
+            public bool isInCombat;
+            public bool isMounted;
+            public bool isFalling;
+            public bool isFlying;
+            public bool isSwimming;
+            public bool isSteathing;
+            public bool isDeath;
+            public bool isUnderPercentBreathing98;
+            public bool isUnderPercentBreathing20;
+            public bool isUnderPercentFatigue98;
+            public bool isUnderPercentFatigue20;
+            public bool hasDiscoveredZoneLastSeconds;
+            internal bool isPetAlive;
+        }
+
+        public int m_gatherObjectId = 0;
+
         public int m_last24bitUnsignedInteger = 0;
         public UnityEvent<int> m_onLast24bitUnsignedInteger = new UnityEvent<int>();
 
@@ -163,6 +217,18 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
                                    m_rightTop5_fullXpModulo.g * 100 +
                                    m_rightTop5_fullXpModulo.b *1;
 
+            m_gatherObjectId =  RgbTo24BitInt(m_leftTop4_gatherObjectId.r,
+                m_leftTop4_gatherObjectId.g,
+                m_leftTop4_gatherObjectId.b);
+
+
+            m_leftTop0_custom24BitsArray= Get24BitsFromColor(m_leftTop0_custom24Bits);
+            m_leftTop1_custom24BitsArray = Get24BitsFromColor(m_leftTop1_custom24Bits);
+            m_leftTop2_targetState24BitsArray = Get24BitsFromColor(m_leftTop2_targetState24Bits);
+            m_leftTop3_playerState24BitsArray = Get24BitsFromColor(m_leftTop3_playerState24Bits);
+            
+            Turn24BitTargetColorToInfo(m_leftTop2_targetState24BitsArray);
+            Turn24BitPlayerColorToInfo(m_leftTop3_playerState24BitsArray);
 
             int rx;
             int gx;
@@ -219,6 +285,240 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
             {
                 m_onLast24bitUnsignedInteger.Invoke(m_last24bitUnsignedInteger);
             }
+        }
+
+        private void Turn24BitTargetColorToInfo(bool[] array24)
+        {
+            m_targetBinaryInfo.m_hasTarget = array24[0];
+            m_targetBinaryInfo.m_isTargetPlayer = array24[1];
+            m_targetBinaryInfo.m_isTargetEnemy = array24[2];
+            m_targetBinaryInfo.m_isTargetInCombat = array24[3];
+            m_targetBinaryInfo.m_isTargetCasting = array24[4];
+            m_targetBinaryInfo.m_isTargetDeath = array24[5];
+            m_targetBinaryInfo.m_isTargetFullLife = array24[6];
+            m_targetBinaryInfo.m_isTargetWithin10Yards = array24[7];
+            m_targetBinaryInfo.m_isTargetWithin30Yards = array24[8];
+            m_targetBinaryInfo.m_isTargetFocusingPlayer = array24[9]; 
+
+
+            m_targetBinaryInfo.m_isGlobalCooldownActive = array24[16];
+            m_targetBinaryInfo.m_isTargetHasCorruption = array24[22];
+            m_targetBinaryInfo.m_isTargetHasAgony = array24[23];
+            
+            //    HasTarget() and 1 or 0,                   --1 DONT CHANGE
+            //IsTargetPlayer() and 1 or 0,   --2 DONT CHANGE
+            //IsTargetEnemy() and 1 or 0,   --3  DONT CHANGE
+            //IsTargetInCombat() and 1 or 0,   --4  DONT CHANGE
+            //IsTargetCasting() and 1 or 0,   --5 DONT CHANGE
+            //IsTargetDeath() and 1 or 0,   --6 DONT CHANGE
+            //--Green--
+            //IsTargetFullLife() and 1 or 0,   --7 DONT CHANGE
+            //IsTargetWithin10Yards() and 1 or 0,   --8 DONT CHANGE
+            //IsTargetWithin30Yards() and 1 or 0,   --9 DONT CHANGE
+            //0,   --10
+            //0,   --11
+            //0,   --12
+            //0,   --13
+            //0,   --14
+            //0,   --15
+            //0,   --16
+            //-- Blue--
+            //IsGlobalCooldownActive() and 1 or 0 ,   --17 DONT CHANGE
+            //0,   --18
+            //0,   --19
+            //0,   --20
+            //0,   --21
+            //0,   --22
+            //IsTargetHasCorruption() and 1 or 0,   --23 DONT CHANGE
+            //IsTargetHasAgony() and 1 or 0,     --24 DONT CHANGE
+        }
+
+        private void Turn24BitPlayerColorToInfo(bool[] array24)
+        {
+            m_playerBinaryInfo.isCasting = array24[0];
+            m_playerBinaryInfo.isGatheringHerbs = array24[1];
+            m_playerBinaryInfo.isGatheringMining = array24[2];
+            m_playerBinaryInfo.isFishing = array24[3];
+            m_playerBinaryInfo.isOnGround = array24[4];
+            m_playerBinaryInfo.isInCombat = array24[5];
+            m_playerBinaryInfo.isMounted = array24[6];
+            m_playerBinaryInfo.isFlying = array24[7];
+            m_playerBinaryInfo.isFalling = array24[8];
+            m_playerBinaryInfo.isSwimming = array24[9];
+            m_playerBinaryInfo.isSteathing = array24[10];
+            m_playerBinaryInfo.isDeath = array24[11];
+            m_playerBinaryInfo.isUnderPercentBreathing98 = array24[12];
+            m_playerBinaryInfo.isUnderPercentBreathing20 = array24[13];
+            m_playerBinaryInfo.isUnderPercentFatigue98 = array24[14];
+            m_playerBinaryInfo.isUnderPercentFatigue20 = array24[15];
+            m_playerBinaryInfo.hasDiscoveredZoneLastSeconds = array24[16];
+            m_playerBinaryInfo.isPetAlive = array24[17];
+
+
+            //    IsCasting() and 1 or 0,                 --1 DONT CHANGE
+            //IsGatheringHerbs() and 1 or 0,          --2 DONT CHANGE
+            //IsGatheringMining() and 1 or 0,         --3 DONT CHANGE
+            //IsFishing() and 1 or 0,                 --4 DONT CHANGE
+            //IsOnGround() and 1 or 0,                --5 DONT CHANGE
+            //IsPlayerInCombat() and 1 or 0,          --6 DONT CHANGE
+            //IsPlayerMounted() and 1 or 0,           --7 DONT CHANGE
+            //IsPlayerFlying() and 1 or 0,            --8 DONT CHANGE
+            //IsPlayerFalling() and 1 or 0,           --9 DONT CHANGE
+            //IsPlayerSwimming() and 1 or 0,          --10 DONT CHANGE
+            //IsPlayerSteathing() and 1 or 0,         --11 DONT CHANGE
+            //IsPlayerDeath() and 1 or 0,             --12 DONT CHANGE
+            //IsUnderPercentBreathing(98) and 1 or 0,     --13 DONT CHANGE
+            //IsUnderPercentBreathing(20) and 1 or 0,     --14 DONT CHANGE
+            //IsUnderPercentFatigue(98) and 1 or 0,      --15 DONT CHANGE
+            //IsUnderPercentFatigue(20) and 1 or 0,      --16 DONT CHANGE
+            //HasDiscoveredZoneLastSeconds(1.5)  and 1 or 0, --17 DONT CHANGE
+            //0 , --18
+            //0 , --19
+            //0 , --20
+            //0 , --21
+            //0 , --22
+            //0 , --23
+            //0-- 24
+        }
+
+        private bool[] Get24BitsFromColor(Color32 color)
+        {
+
+            //LUA CODE THAT CREATE THE COLOR RGB
+            //  
+            /*
+             for i = 1, 24 do
+        local bitValue = bitsArrayOf24MaxLenght[i] or 0
+        if bitValue == 1 or bitValue == true then
+            if i == 1 then red = red + 128 end
+            if i == 2 then red = red + 64 end
+            if i == 3 then red = red + 32 end
+            if i == 4 then red = red + 16 end
+            if i == 5 then red = red + 8 end
+            if i == 6 then red = red + 4 end
+            if i == 7 then red = red + 2 end
+            if i == 8 then red = red + 1 end
+
+            if i == 9 then green = green + 128 end
+            if i == 10 then green = green + 64 end
+            if i == 11 then green = green + 32 end
+            if i == 12 then green = green + 16 end
+            if i == 13 then green = green + 8 end
+            if i == 14 then green = green + 4 end
+            if i == 15 then green = green + 2 end
+            if i == 16 then green = green + 1 end
+
+            if i == 17 then blue = blue + 128 end
+            if i == 18 then blue = blue + 64 end
+            if i == 19 then blue = blue + 32 end
+            if i == 20 then blue = blue + 16 end
+            if i == 21 then blue = blue + 8 end
+            if i == 22 then blue = blue + 4 end
+            if i == 23 then blue = blue + 2 end
+            if i == 24 then blue = blue + 1 end
+        end
+    end
+             */
+
+            bool[] bits = new bool[24];
+            byte red = color.r;
+            byte green = color.g;
+            byte blue = color.b;
+
+            for (int i = 0; i < 24; i++)
+            {
+                bits[i] = false; // Initialize all bits to false
+                switch (i) { 
+                    case 0:bits[i] = IsBitLeftToRightTrue(red, 0); break;
+                    case 1: bits[i] = IsBitLeftToRightTrue(red, 1); break;
+                    case 2: bits[i] = IsBitLeftToRightTrue(red, 2); break;
+                    case 3: bits[i] = IsBitLeftToRightTrue(red, 3); break;
+                    case 4: bits[i] = IsBitLeftToRightTrue(red, 4); break;
+                    case 5: bits[i] = IsBitLeftToRightTrue(red, 5); break;
+                    case 6: bits[i] = IsBitLeftToRightTrue(red, 6); break;
+                    case 7: bits[i] = IsBitLeftToRightTrue(red, 7); break;
+                    case 8: bits[i] = IsBitLeftToRightTrue(green, 0); break;
+                    case 9: bits[i] = IsBitLeftToRightTrue(green, 1); break;
+                    case 10: bits[i] = IsBitLeftToRightTrue(green, 2); break;
+                    case 11: bits[i] = IsBitLeftToRightTrue(green, 3); break;
+                    case 12: bits[i] = IsBitLeftToRightTrue(green, 4); break;
+                    case 13: bits[i] = IsBitLeftToRightTrue(green, 5); break;
+                    case 14: bits[i] = IsBitLeftToRightTrue(green, 6); break;
+                    case 15: bits[i] = IsBitLeftToRightTrue(green, 7); break;
+                    case 16: bits[i] = IsBitLeftToRightTrue(blue, 0); break;
+                    case 17: bits[i] = IsBitLeftToRightTrue(blue, 1); break;
+                    case 18: bits[i] = IsBitLeftToRightTrue(blue, 2); break;
+                    case 19: bits[i] = IsBitLeftToRightTrue(blue, 3); break;
+                    case 20: bits[i] = IsBitLeftToRightTrue(blue, 4); break;
+                    case 21: bits[i] = IsBitLeftToRightTrue(blue, 5); break;
+                    case 22: bits[i] = IsBitLeftToRightTrue(blue, 6); break;
+                    case 23: bits[i] = IsBitLeftToRightTrue(blue, 7); break;
+
+
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            return bits;
+        }
+
+        private bool IsBitLeftToRightTrue(byte colorAsByte, int indxex)
+        {
+            return (colorAsByte & (1 << (7 - indxex))) != 0; // Check if the bit at position v is set
+        }
+
+
+        private int RgbTo24BitInt(byte r, byte g, byte b)
+        {
+            return (r << 16) | (g << 8) | b;
         }
 
         private void ConvertDoubleColorToId(Color32 partOne, Color32 partTwo, out string playerId)

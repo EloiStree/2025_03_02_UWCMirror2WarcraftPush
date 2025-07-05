@@ -63,6 +63,26 @@ public class UWCMono_FetchObservedUwcWindowInScene : MonoBehaviour
         count = uwcTexturesInScene.Count;
     }
 
+    public void GetWindowSize(int index, out int m_width, out int m_height)
+    {
+        if (index < 0 || index >= uwcTexturesInScene.Count)
+        {
+            m_width = -1;
+            m_height = -1;
+            return;
+        }
+        var uwcWindowPixelsAccess = uwcTexturesInScene[index];
+        if (uwcWindowPixelsAccess != null && uwcWindowPixelsAccess.m_window != null && uwcWindowPixelsAccess.m_window.window != null)
+        {
+            m_width = uwcWindowPixelsAccess.m_window.window.width;
+            m_height = uwcWindowPixelsAccess.m_window.window.height;
+        }
+        else
+        {
+            m_width = -1;
+            m_height = -1;
+        }
+    }
 }
 
 
