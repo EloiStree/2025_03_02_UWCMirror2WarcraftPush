@@ -15,8 +15,9 @@ public class UWCMono_FetchWindowToColor32WH : MonoBehaviour
     public UnityEvent<RenderTexture> m_onRenderTextureUpdated;
     public ComputeBuffer m_computeBufferOfRenderTexture;
     public Unity.Collections.NativeArray<Color32> m_color32Array;
-
+    public bool m_useMipMap = true;
     public float m_refreshRate = 0.1f;
+    public RenderTextureFormat m_renderTextureFormat = RenderTextureFormat.ARGB32;
 
     private void Awake()
     {
@@ -56,6 +57,11 @@ public class UWCMono_FetchWindowToColor32WH : MonoBehaviour
                 }
                 m_renderTexture = new RenderTexture(m_width, m_height, 0);
                 m_renderTexture.enableRandomWrite = true;
+                m_renderTexture.useMipMap = m_useMipMap;
+                m_renderTexture.format = m_renderTextureFormat;
+                m_renderTexture.width = m_width;
+                m_renderTexture.height = m_height;
+
                 m_renderTexture.Create();
                 m_onRenderTextureCreated?.Invoke(m_renderTexture);
             }

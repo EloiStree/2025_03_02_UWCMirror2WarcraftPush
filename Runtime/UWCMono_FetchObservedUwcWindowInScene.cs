@@ -91,6 +91,7 @@ public class UwcWindowPixelsAccess
 {
     public UwcWindowTexture m_window;
     public Material m_material;
+    public RenderTexture m_renderTexture;
     public Color32[] m_colors;
     public int m_width;
     public int m_height;
@@ -251,4 +252,5 @@ public class UwcWindowPixelsAccess
         }
     }
 
+    
 }
