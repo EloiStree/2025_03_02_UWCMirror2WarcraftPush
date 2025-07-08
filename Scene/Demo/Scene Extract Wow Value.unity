@@ -391,7 +391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 144888031}
-  - component: {fileID: 144888032}
+  - component: {fileID: 144888033}
   m_Layer: 0
   m_Name: Native to Color
   m_TagString: Untagged
@@ -414,7 +414,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 175614072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &144888032
+--- !u!114 &144888033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -423,13 +423,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 144888030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a53c4045fc97ca443a7b9b73ed8378bb, type: 3}
+  m_Script: {fileID: 11500000, guid: d82dcd6982822f84490afa6d9bfca8c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_source:
     m_width: 0
     m_height: 0
-  m_borderPixelPaddingLeftRight: 1
+  m_borderPixelPaddingLeftRight: 2
   m_borderPixelPaddingTop: 37
   m_colorBlockCount: 8
   m_colorLeftTopDown:
@@ -466,18 +466,41 @@ MonoBehaviour:
     rgba: 0
   - serializedVersion: 2
     rgba: 0
+  m_colorClockwise:
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  m_onColorUpdateClockwise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1601324785}
+        m_TargetAssemblyTypeName: WowMono_Pixels16ToWowBasicInfo, be.elab.uwcwow
+        m_MethodName: SetColor16
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_blockHeight: 0
   m_startBlockTopY: 0
   m_useUpdate: 1
-  m_1dIndex: 0
-  m_foundColor1D:
-    serializedVersion: 2
-    rgba: 0
-  m_x: 0
-  m_y: 0
-  m_foundColorLRTD:
-    serializedVersion: 2
-    rgba: 0
 --- !u!1 &173174254
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +608,7 @@ Transform:
   - {fileID: 2127231206}
   - {fileID: 188834081}
   - {fileID: 144888031}
+  - {fileID: 1601324784}
   m_Father: {fileID: 553364537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &175614073
@@ -678,8 +702,8 @@ MonoBehaviour:
   m_onUpdatedColor:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 144888032}
-        m_TargetAssemblyTypeName: TextureMono_NativeArray2DColor32To16PixelsBasicInfo,
+      - m_Target: {fileID: 144888033}
+        m_TargetAssemblyTypeName: WowMono_NativeArray2DColor32To16PixelsBasicInfo,
           be.elab.uwcwow
         m_MethodName: SetNativeArrayColor32
         m_Mode: 0
@@ -2212,6 +2236,149 @@ Transform:
   - {fileID: 173174255}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1601324783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601324784}
+  - component: {fileID: 1601324785}
+  m_Layer: 0
+  m_Name: Color16 To Wow Basic Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1601324784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601324783}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 175614072}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1601324785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601324783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf4ce936cf3388d46bb46a7e29c9e679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_colorClockwise:
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  - serializedVersion: 2
+    rgba: 0
+  m_cr0_mapCoordinate:
+    m_mapX: 0
+    m_mapY: 0
+    m_rotationAngle360: 0
+  m_cr1cr2_toWorldXY:
+    m_worldPositionXY: {x: 0, y: 0}
+  m_cr3_playerLifeLevel:
+    percentLife: 0
+    playerLevel: 0
+    percentXp: 0
+  m_cr4_targetInfo:
+    m_player1Life: 0
+    m_teamLife1: 0
+    m_teamLife2: 0
+    m_teamLife3: 0
+    m_teamLife4: 0
+    m_petLife: 0
+  m_cr5_xpModuloInfo:
+    fullXpModulo999999: 0
+  m_cr6cr7_doubleColorToGUIDPlayer:
+    m_guid: 
+  m_cl0_Custom24bits:
+    bits24: 000000000000000000000000000000000000000000000000
+  m_cl1_Custom24bits:
+    bits24: 000000000000000000000000000000000000000000000000
+  m_cl2_targetBinaryInfo:
+    m_hasTarget: 0
+    m_isTargetPlayer: 0
+    m_isTargetEnemy: 0
+    m_isTargetInCombat: 0
+    m_isTargetCasting: 0
+    m_isTargetDeath: 0
+    m_isTargetFullLife: 0
+    m_isTargetWithin10Yards: 0
+    m_isTargetWithin30Yards: 0
+    m_isGlobalCooldownActive: 0
+    m_isTargetHasCorruption: 0
+    m_isTargetHasAgony: 0
+    m_isTargetFocusingPlayer: 0
+  m_cl3_playerBinaryInfo:
+    m_isCasting: 0
+    m_isGatheringHerbs: 0
+    m_isGatheringMining: 0
+    m_isFishing: 0
+    m_isOnGround: 0
+    m_isInCombat: 0
+    m_isMounted: 0
+    m_isFalling: 0
+    m_isFlying: 0
+    m_isSwimming: 0
+    m_isSteathing: 0
+    m_isDeath: 0
+    m_isUnderPercentBreathing98: 0
+    m_isUnderPercentBreathing20: 0
+    m_isUnderPercentFatigue98: 0
+    m_isUnderPercentFatigue20: 0
+    m_hasDiscoveredZoneLastSeconds: 0
+    m_isPetAlive: 0
+  m_cl4_gatherObjectId:
+    gatherObjectId: 0
+  m_cl5_targetInfo:
+    m_targetLifePercent: 0
+    m_targetLevel: 0
+    m_targetPowerPercent: 0
+  m_cl6cl7_doubleColorToGUIDTarget:
+    m_guid: 
 --- !u!114 &1841293107 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7683570384235400504, guid: c2762d115a3ce484eacb09811a051139,
@@ -2548,50 +2715,32 @@ MonoBehaviour:
   m_borderPixelPaddingTop: 37
   m_colorBlockCount: 8
   m_colorLeftTopDown:
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
   m_colorRightTopDown:
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
-  - serializedVersion: 2
-    rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
+  - rgba: 0
   m_blockHeight: 0
   m_startBlockTopY: 0
   m_useUpdate: 1
   m_1dIndex: 0
   m_foundColor1D:
-    serializedVersion: 2
     rgba: 0
   m_x: 0
   m_y: 0
   m_foundColorLRTD:
-    serializedVersion: 2
     rgba: 0
 --- !u!114 &2077702378
 MonoBehaviour:

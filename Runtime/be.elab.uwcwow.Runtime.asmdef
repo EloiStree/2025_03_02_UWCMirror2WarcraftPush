@@ -2,7 +2,8 @@
     "name": "be.elab.uwcwow",
     "rootNamespace": "",
     "references": [
-        "uWindowCapture.Runtime"
+        "uWindowCapture.Runtime",
+        "be.elab.texturetoolbox"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -156,11 +156,11 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
         public float m_targetIsCastingOrChanneling;
         public int m_windowHandle;
 
-        public TargetBinaryInfo m_targetBinaryInfo = new TargetBinaryInfo();
-        public PlayerBinaryInfo m_playerBinaryInfo = new PlayerBinaryInfo();
+        public WowColorTargetBinaryInfo m_targetBinaryInfo = new WowColorTargetBinaryInfo();
+        public WowColorPlayerBinaryInfo m_playerBinaryInfo = new WowColorPlayerBinaryInfo();
 
         [System.Serializable]
-        public class TargetBinaryInfo
+        public class WowColorTargetBinaryInfo
         {
             public bool m_hasTarget;
             public bool m_isTargetPlayer;
@@ -175,10 +175,13 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
             public bool m_isTargetHasCorruption;
             public bool m_isTargetHasAgony;
             public bool m_isTargetFocusingPlayer;
+            public void SetWithBits(params bool[] bits) { 
+            
+            }
         }
 
         [System.Serializable]
-        public class PlayerBinaryInfo
+        public class WowColorPlayerBinaryInfo
         {
             public bool isCasting;
             public bool isGatheringHerbs;
@@ -197,7 +200,11 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
             public bool isUnderPercentFatigue98;
             public bool isUnderPercentFatigue20;
             public bool hasDiscoveredZoneLastSeconds;
-            internal bool isPetAlive;
+            public bool isPetAlive;
+            public void SetWithBits(params bool[] bits)
+            {
+
+            }
         }
 
         public int m_gatherObjectId = 0;
@@ -389,42 +396,7 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
         private bool[] Get24BitsFromColor(Color32 color)
         {
 
-            //LUA CODE THAT CREATE THE COLOR RGB
-            //  
-            /*
-             for i = 1, 24 do
-        local bitValue = bitsArrayOf24MaxLenght[i] or 0
-        if bitValue == 1 or bitValue == true then
-            if i == 1 then red = red + 128 end
-            if i == 2 then red = red + 64 end
-            if i == 3 then red = red + 32 end
-            if i == 4 then red = red + 16 end
-            if i == 5 then red = red + 8 end
-            if i == 6 then red = red + 4 end
-            if i == 7 then red = red + 2 end
-            if i == 8 then red = red + 1 end
-
-            if i == 9 then green = green + 128 end
-            if i == 10 then green = green + 64 end
-            if i == 11 then green = green + 32 end
-            if i == 12 then green = green + 16 end
-            if i == 13 then green = green + 8 end
-            if i == 14 then green = green + 4 end
-            if i == 15 then green = green + 2 end
-            if i == 16 then green = green + 1 end
-
-            if i == 17 then blue = blue + 128 end
-            if i == 18 then blue = blue + 64 end
-            if i == 19 then blue = blue + 32 end
-            if i == 20 then blue = blue + 16 end
-            if i == 21 then blue = blue + 8 end
-            if i == 22 then blue = blue + 4 end
-            if i == 23 then blue = blue + 2 end
-            if i == 24 then blue = blue + 1 end
-        end
-    end
-             */
-
+           
             bool[] bits = new bool[24];
             byte red = color.r;
             byte green = color.g;
@@ -462,55 +434,6 @@ public class FetchBasicWowPixelCoordinate : MonoBehaviour
 
                 }
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             return bits;
         }
