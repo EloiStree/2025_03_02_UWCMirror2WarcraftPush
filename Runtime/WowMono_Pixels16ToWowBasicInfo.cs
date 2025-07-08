@@ -1,9 +1,35 @@
 using UnityEngine;
+using UnityEngine.Events;
+
+
+
+[System.Serializable]
+public class Wow_PlayerInfo {
+
+    public Vector2 m_mapPositionLRTD;
+    public Vector3 m_worldPositionRLDT;
+    public bool m_discoveringZone = false;
+    public bool m_gathering = false;
+}
+
+
+[System.Serializable]
+public class Wow_PlayerInfoEvent
+{
+
+    public UnityEvent<Vector2> m_mapPositionLRTD;
+    public UnityEvent<Vector3> m_worldPositionRLDT;
+
+    public UnityEvent m_onDiscoverZoneChangeToTrue;
+    public UnityEvent m_onGatheringChangeToTrue;
+}
 
 public class WowMono_Pixels16ToWowBasicInfo : MonoBehaviour {
 
 
     public Color16Group m_color16Group = new Color16Group();
+    public UnityEvent<Color16Group> m_onColorGroupUpdated;
+
 
     [System.Serializable]
     public class Color16Group { 
@@ -14,7 +40,6 @@ public class WowMono_Pixels16ToWowBasicInfo : MonoBehaviour {
     public ColorWowToTeamLife9 m_cr4_targetInfo = new ColorWowToTeamLife9();
     public ColorWowXpModulo999999 m_cr5_xpModuloInfo = new ColorWowXpModulo999999();
     public ColorWowDoubleColorToGUID m_cr6cr7_doubleColorToGUIDPlayer = new ColorWowDoubleColorToGUID();
-
     public ColorWowTo24Bits m_cl0_Custom24bits = new ColorWowTo24Bits();
     public ColorWowTo24Bits m_cl1_Custom24bits = new ColorWowTo24Bits();
     public WowColorTargetBinaryInfo m_cl2_targetBinaryInfo = new WowColorTargetBinaryInfo();
@@ -22,11 +47,8 @@ public class WowMono_Pixels16ToWowBasicInfo : MonoBehaviour {
     public ColorWowGatherObjectId m_cl4_gatherObjectId = new ColorWowGatherObjectId();
     public ColorWowTargetInfo m_cl5_targetInfo = new ColorWowTargetInfo();
     public ColorWowDoubleColorToGUID m_cl6cl7_doubleColorToGUIDTarget = new ColorWowDoubleColorToGUID();
-
-
     public ColorWowTo24Bits m_player24bits;
     public ColorWowTo24Bits m_target24bits;
-
 
     public void SetColor16(Color32[] source)
     {
@@ -51,12 +73,13 @@ public class WowMono_Pixels16ToWowBasicInfo : MonoBehaviour {
 
         m_cr6cr7_doubleColorToGUIDPlayer.SetWithColor(source[6], source[7]);
         m_cl6cl7_doubleColorToGUIDTarget.SetWithColor(source[9], source[8]);
-
-    }
+  
+        }
     }
 
     public void SetColor16(Color32[] source) {
         m_color16Group.SetColor16(source);
+        m_onColorGroupUpdated.Invoke(m_color16Group);
     }
 
 }

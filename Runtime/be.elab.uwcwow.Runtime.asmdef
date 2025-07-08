@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "uWindowCapture.Runtime",
-        "be.elab.texturetoolbox"
+        "be.elab.texturetoolbox",
+        "be.elab.watchexecutetime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

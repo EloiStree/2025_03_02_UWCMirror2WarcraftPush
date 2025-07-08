@@ -155,6 +155,11 @@ public class ColorWowMapCoordinate {
         m_mapY = color.g / 255f * 100f;
         m_rotationAngle360 = color.b / 255f * 360f;
     }
+
+    public Vector2 GetMapPositionRaw()
+    {
+        return new Vector2(m_mapX / 100f, m_mapY / 100f);
+    }
 }
 
 [System.Serializable]
@@ -253,6 +258,11 @@ public class ColorWowToWorldXY {
         m_worldPositionXY.y = y;
         m_worldPositionXY.x = x;
 
+    }
+
+    public  Vector3 GetWorldPosition()
+    {
+        return new Vector3(m_worldPositionXY.x , 0, m_worldPositionXY.y );
     }
 }
 
