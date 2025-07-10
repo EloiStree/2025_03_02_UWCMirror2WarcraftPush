@@ -780,6 +780,8 @@ Transform:
   - {fileID: 1023746551}
   - {fileID: 1108894566}
   - {fileID: 1855733284}
+  - {fileID: 403453730}
+  - {fileID: 1372237992}
   - {fileID: 2116062403}
   m_Father: {fileID: 175614072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1223,18 +1225,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 403453730}
-  - component: {fileID: 403453729}
   - component: {fileID: 403453728}
   - component: {fileID: 403453727}
   - component: {fileID: 403453726}
   - component: {fileID: 403453725}
   m_Layer: 0
-  m_Name: SaveXP
+  m_Name: Save Discovery Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &403453725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,7 +1282,7 @@ MonoBehaviour:
   m_subDirectories:
     m_subDirectories:
     - XpPoint
-    - Flying
+    - Discovering
 --- !u!114 &403453728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,6 +1298,10 @@ MonoBehaviour:
   m_whereToStore: {fileID: 403453727}
   m_fileExtension: xppoint
   m_insideFile: .
+  m_worldMapPointWithAngle:
+    m_mapPositionLRTD: {x: 1, y: 2}
+    m_worldPositionRLDT: {x: 3, y: 4, z: 5}
+    m_playerAngle360: 12
   m_onXpSaved:
     m_PersistentCalls:
       m_Calls:
@@ -1311,70 +1316,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &403453729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403453724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f758bc006551e74fa9039d88b82b6c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_playerId: 
-  m_championInfoBasic:
-    m_playerIdFFFFHHHHHHHH: FFFF-FFFFFFFF
-    m_playerIdFocusFFFFHHHHHHHH: FFFF-FFFFFFFF
-    m_championIndexId: 0
-    m_windowHandle: 0
-    m_playerGuid: 000000000000
-    m_targetGuid: 000000000000
-    m_worldPositionDownTopY: 0
-    m_worldPositionRightLeftX: 0
-    m_mapLeftRightPercentX: 0
-    m_mapTopBottomPercentY: 0
-    m_counterClockWiseAngle360: 0
-    m_championLevel: 0
-    m_championXpModulo999999: 0
-    m_championPercentLife: 0
-    m_championPercentXp: 0
-    m_partyChampion0Life09: 0
-    m_partyChampion1Life09: 0
-    m_partyChampion2Life09: 0
-    m_partyChampion3Life09: 0
-    m_partyChampion4Life09: 0
-    m_petLife09: 0
-    m_targetLifePercent: 0
-    m_targetPowerPercent: 0
-    m_targetLevel: 0
-    m_lastIntegerActionFromGame: 0
-    m_onIntegerActionFromGame:
-      m_PersistentCalls:
-        m_Calls: []
-  m_currentXp: -1
-  m_onXpChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 403453728}
-        m_TargetAssemblyTypeName: FlyXpMono_SaveXpPoint, Assembly-CSharp
-        m_MethodName: SaveXp
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_lastWorldMapPoint:
-    m_worldPositionDownTopY: 0
-    m_worldPositionRightLeftX: 0
-    m_mapLeftRightPercentX: 0
-    m_mapTopBottomPercentY: 0
+        m_CallState: 1
 --- !u!4 &403453730
 Transform:
   m_ObjectHideFlags: 0
@@ -1383,13 +1325,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403453724}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75, y: 183.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 71.5251, y: 183.33687, z: -0.17582345}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 115280046}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 250123002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &477259251
 GameObject:
@@ -1969,6 +1911,135 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &912801614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912801615}
+  - component: {fileID: 912801616}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &912801615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912801614}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1372237992}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &912801616
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912801614}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 45487d7266826df4ea284c17043fbb2f, type: 3}
+  m_Resource: {fileID: 8300000, guid: 45487d7266826df4ea284c17043fbb2f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &933552910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,6 +2863,123 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1372237991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1372237992}
+  - component: {fileID: 1372237996}
+  - component: {fileID: 1372237995}
+  - component: {fileID: 1372237994}
+  - component: {fileID: 1372237993}
+  m_Layer: 0
+  m_Name: Save Gathering Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1372237992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372237991}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 71.5251, y: 183.33687, z: -0.17582345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 912801615}
+  m_Father: {fileID: 250123002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1372237993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372237991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e306e72b3af6c30489a4f0be21da1529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pathTypeMono: {fileID: 1372237995}
+  m_directoryPath: C:/Users/Shadow/AppData/LocalLow/eLab/Wow Remote Android 2D\XpPoint/Gathering
+  m_refreshAtStart: 1
+  m_onPathFetch:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1372237994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372237991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0e093f045afd34ba2030650b94a5a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1372237995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372237991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6329ca70cdd9c314db5ba6db30da9010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_whereToStore: {fileID: 1372237994}
+  m_subDirectories:
+    m_subDirectories:
+    - XpPoint
+    - Gathering
+--- !u!114 &1372237996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372237991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3f0b60b414cff488cc39231a56026e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_whereToStore: {fileID: 1372237995}
+  m_fileExtension: xppoint
+  m_insideFile: .
+  m_worldMapPointWithAngle:
+    m_mapPositionLRTD: {x: 1, y: 2}
+    m_worldPositionRLDT: {x: 3, y: 45, z: 5}
+    m_playerAngle360: 10
+  m_onXpSaved:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 912801616}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &1375327726
 GameObject:
   m_ObjectHideFlags: 0
@@ -3241,22 +3429,41 @@ MonoBehaviour:
   m_playerInfo:
     m_mapPositionLRTD: {x: 0, y: 0}
     m_worldPositionRLDT: {x: 0, y: 0, z: 0}
+    m_angleCounterClockWise360: 0
     m_discoveringZone: 0
     m_gathering: 0
   m_playerInfoEvent:
-    m_mapPositionLRTD:
+    m_onMapPositionLRTD:
       m_PersistentCalls:
         m_Calls: []
-    m_worldPositionRLDT:
+    m_onWorldPositionRLDT:
+      m_PersistentCalls:
+        m_Calls: []
+    m_onPlayerAngle360:
+      m_PersistentCalls:
+        m_Calls: []
+    m_onPlayerPositionUpdated:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1855733283}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
+        - m_Target: {fileID: 403453728}
+          m_TargetAssemblyTypeName: FlyXpMono_SaveXpPoint, Assembly-CSharp
+          m_MethodName: SavePositionMap
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1372237996}
+          m_TargetAssemblyTypeName: FlyXpMono_SaveXpPoint, Assembly-CSharp
+          m_MethodName: SavePositionMap
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3264,10 +3471,34 @@ MonoBehaviour:
           m_CallState: 2
     m_onDiscoverZoneChangeToTrue:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 403453728}
+          m_TargetAssemblyTypeName: FlyXpMono_SaveXpPoint, Assembly-CSharp
+          m_MethodName: SaveCurrentPosition
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     m_onGatheringChangeToTrue:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1372237996}
+          m_TargetAssemblyTypeName: FlyXpMono_SaveXpPoint, Assembly-CSharp
+          m_MethodName: SaveCurrentPosition
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1824552250
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,7 +4517,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_parser.m_onChampionUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 403453729}
+      objectReference: {fileID: 0}
     - target: {fileID: 4634236127873722238, guid: 3f46930c2afd92742b3ab2aa45d2e15b,
         type: 3}
       propertyPath: m_parser.m_onChampionUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -4373,7 +4604,6 @@ SceneRoots:
   - {fileID: 101520930}
   - {fileID: 743496864}
   - {fileID: 824230763514230528}
-  - {fileID: 403453730}
   - {fileID: 488708160}
   - {fileID: 553364537}
   - {fileID: 1231562898}

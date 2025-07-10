@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 
@@ -160,6 +159,11 @@ public class ColorWowMapCoordinate {
     {
         return new Vector2(m_mapX / 100f, m_mapY / 100f);
     }
+    public float GetPlayerAngle360CounterClockwise()
+    {
+        return m_rotationAngle360 ;
+
+    }
 }
 
 [System.Serializable]
@@ -188,6 +192,7 @@ public class ColorWowPlayer {
         percentXp = color.b / 255f;
     }
 
+   
 }
 
 
