@@ -1331,6 +1331,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 115280046}
+  - {fileID: 1063174688}
   m_Father: {fileID: 250123002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &477259251
@@ -1911,6 +1912,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &904254935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904254936}
+  - component: {fileID: 904254937}
+  m_Layer: 0
+  m_Name: As Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &904254936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904254935}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1372237992}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &904254937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904254935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9420411ace03c54c853ef364c9d962a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_whereToStore: {fileID: 1372237995}
+  m_worldMapPointWithAngle:
+    m_mapPositionLRTD: {x: 0, y: 0}
+    m_worldPositionRLDT: {x: 0, y: 0, z: 0}
+    m_playerAngle360: 0
+  m_onSaved:
+    m_PersistentCalls:
+      m_Calls: []
+  m_renderTexture: {fileID: 0}
+  m_width: -1
+  m_height: -1
+  m_pixelCounts: -1
+  m_bytesCountsRGBA: -1
+  m_bytesCountsRGB: -1
+  m_mipmap: 0
+  m_linear: 0
 --- !u!1 &912801614
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2330,66 @@ MonoBehaviour:
     - Default
     m_useNotification: 1
   m_useUpdate: 1
+--- !u!1 &1063174687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1063174688}
+  - component: {fileID: 1063174689}
+  m_Layer: 0
+  m_Name: As Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1063174688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063174687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 403453730}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1063174689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063174687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9420411ace03c54c853ef364c9d962a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_whereToStore: {fileID: 403453727}
+  m_worldMapPointWithAngle:
+    m_mapPositionLRTD: {x: 0, y: 0}
+    m_worldPositionRLDT: {x: 0, y: 0, z: 0}
+    m_playerAngle360: 0
+  m_onSaved:
+    m_PersistentCalls:
+      m_Calls: []
+  m_renderTexture: {fileID: 0}
+  m_width: -1
+  m_height: -1
+  m_pixelCounts: -1
+  m_bytesCountsRGBA: -1
+  m_bytesCountsRGB: -1
+  m_mipmap: 0
+  m_linear: 0
 --- !u!1 &1108894565
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,6 +3018,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 912801615}
+  - {fileID: 904254936}
   m_Father: {fileID: 250123002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1372237993
@@ -3469,6 +3591,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1063174689}
+          m_TargetAssemblyTypeName: WowMono_SaveScreenshotAtPosition, Assembly-CSharp
+          m_MethodName: SavePositionMap
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 904254937}
+          m_TargetAssemblyTypeName: WowMono_SaveScreenshotAtPosition, Assembly-CSharp
+          m_MethodName: SavePositionMap
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     m_onDiscoverZoneChangeToTrue:
       m_PersistentCalls:
         m_Calls:
@@ -3484,12 +3630,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1063174689}
+          m_TargetAssemblyTypeName: WowMono_SaveScreenshotAtPosition, Assembly-CSharp
+          m_MethodName: SaveAsJPEG
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     m_onGatheringChangeToTrue:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1372237996}
           m_TargetAssemblyTypeName: FlyXpMono_SaveXpPoint, Assembly-CSharp
           m_MethodName: SaveCurrentPosition
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 904254937}
+          m_TargetAssemblyTypeName: WowMono_SaveScreenshotAtPosition, Assembly-CSharp
+          m_MethodName: SaveAsJPEG
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4316,6 +4486,30 @@ MonoBehaviour:
       - m_Target: {fileID: 250123003}
         m_TargetAssemblyTypeName: Eloi.TextureUtility.TextureMono_CropRenderTexture,
           be.elab.texturetoolbox
+        m_MethodName: SetRenderTexture
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1063174689}
+        m_TargetAssemblyTypeName: WowMono_SaveScreenshotAtPosition, Assembly-CSharp
+        m_MethodName: SetRenderTexture
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 904254937}
+        m_TargetAssemblyTypeName: WowMono_SaveScreenshotAtPosition, Assembly-CSharp
         m_MethodName: SetRenderTexture
         m_Mode: 0
         m_Arguments:
